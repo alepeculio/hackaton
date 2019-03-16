@@ -8,6 +8,7 @@ const index = require( '../index' );
 
 exports.agregarCupon = (req, res) => {
 	//guardarCupon(123123, "alejandro peculio", 312432434, 432545, "ale@gmail.com", "sdfskfgbdfñlfñsdm fkgfbdfnlkgblfds", res);	
+	console.log(req.body)
 }
 
 guardarCupon = (numCupon, nombre, ci, telefono, correo, img, res) => {

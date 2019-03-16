@@ -22,9 +22,6 @@ app.use(cors());
 
 app.use('/cupones', cupon);
 let port = 1234;
-//Para usar un template
-//npm install --save ejs
-
 
 const server = app.listen( process.env.PORT || port, () => {
 	console.log('Servidor iniciado');
