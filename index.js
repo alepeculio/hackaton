@@ -24,6 +24,8 @@ let port = 1234;
 //Para usar un template
 //npm install --save ejs
 
+'use strict';
+
 
 const server = app.listen( process.env.PORT || port, () => {
 	console.log('Servidor iniciado');
