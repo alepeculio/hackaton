@@ -8,7 +8,7 @@ const index = require( '../index' );
 
 exports.agregarCupon = (req, res) => {
 
-  console.log(req.query.img);
+  console.log("Llego");
 
   let imgbase64 = req.query.img.replace(/^data:image\/jpeg;base64,/,"");
 
