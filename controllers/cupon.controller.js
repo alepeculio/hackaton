@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 const Cupon = require('../models/cupon.model');
-const multiparty = require('multiparty');
+//const multiparty = require('multiparty');
 const index = require( '../index' );
 
 'use strict';
@@ -74,5 +74,29 @@ async function detectFulltextGCS(bucketName, fileName) {
 
 detectText().catch(console.error);
 detectFulltextGCS().catch(console.error);
+
+}
+
+guardarCupon = (numCupon, nombre, ci, telefono, correo, img, res) => {
+
+	let cupon = new Cupon ({
+		_id: mongoose.Types.ObjectId(),
+		numcupon: numCupon,
+		nombre: nombre,
+		ci: ci,
+		telefono: telefono,
+		correo: correo,
+		img: img
+	});
+
+
+	cupon.save()
+			.then((u) => {
+				res.json({Mensaje: 'Cupon agregado con éxito.'});
+			})
+			.catch((err) => {
+				console.log(err);
+				res.json({Error: 'Error'});
+	});
 
 }
