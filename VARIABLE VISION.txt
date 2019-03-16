@@ -1,0 +1,7 @@
+LINUX
+
+export GOOGLE_APPLICATION_CREDENTIALS=cloud-vision.json
+
+WINDOWS
+
+set GOOGLE_APPLICATION_CREDENTIALS=cloud-vision.json
