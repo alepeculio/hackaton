@@ -6,7 +6,6 @@ const cupon = require('./routes/cupon.route');
 const coso = require( './controllers/cupon.controller' );
 const app = express();
 
-
 var mongoose = require('mongoose');
 var deb_db_url = 'mongodb://hackaton:hackaton2019@ds331735.mlab.com:31735/hackaton';
 
