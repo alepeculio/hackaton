@@ -1,20 +1,35 @@
 var mongoose = require('mongoose');
 const Cupon = require('../models/cupon.model');
-const multiparty = require('multiparty');
+//const multiparty = require('multiparty');
 const index = require( '../index' );
 
 
 /*[Ale] ============================================================================================*/
 
 exports.agregarCupon = (req, res) => {
-	var form = new multiparty.Form(); //Para el manejo de datos de formularios 'multipart/form-data'
+	//guardarCupon(123123, "alejandro peculio", 312432434, 432545, "ale@gmail.com", "sdfskfgbdfñlfñsdm fkgfbdfnlkgblfds", res);	
+}
 
-	form.parse(req, function(err, fields, files) {
-		var imgPath;
-		var contentType; //Extención del archivo.
-		if(files.img !== undefined ){
-			var filename = files.img[0].originalFilename.split('.');
-			contentType = filename[filename.length - 1]; 
-			imgPath = files.img[0].path;
-		}
+guardarCupon = (numCupon, nombre, ci, telefono, correo, img, res) => {
+
+	let cupon = new Cupon ({
+		_id: mongoose.Types.ObjectId(),
+		numcupon: numCupon,
+		nombre: nombre,
+		ci: ci,
+		telefono: telefono,
+		correo: correo,
+		img: img
+	});
+
+
+	cupon.save()
+			.then((u) => {
+				res.json({Mensaje: 'Cupon agregado con éxito.'});
+			})
+			.catch((err) => {
+				console.log(err);
+				res.json({Error: 'Error'});
+	});
+
 }

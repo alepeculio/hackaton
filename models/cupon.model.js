@@ -13,7 +13,7 @@ var cuponSchema = new Schema({
 	ci:{type:Number, required:true},
 	telefono:{type:Number, required:true},
 	correo:{type: String,validate: [validarCorreo, false], unique:true},
-	img: { data: Buffer, contentType: String},
+	img: { type: String, required: true},
 });
 
 module.exports = mongoose.model('Cupon', cuponSchema);
