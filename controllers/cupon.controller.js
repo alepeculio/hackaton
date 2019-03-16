@@ -15,7 +15,7 @@ exports.agregarCupon = (req, res) => {
   fs.writeFile("imagen.jpeg", imgbase64, 'base64', (err) => {
     if(err)
       return console.log(err);
-    
+
         async function detectText() {
 
           const vision = require('@google-cloud/vision');
@@ -44,7 +44,7 @@ exports.agregarCupon = (req, res) => {
         }
 
   detectText().catch(console.error);
-}
+})}
 
 /*guardarCupon = (numCupon, nombre, ci, telefono, correo, img, res) => {
 
